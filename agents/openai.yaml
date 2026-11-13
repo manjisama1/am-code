@@ -1,0 +1,4 @@
+interface:
+  display_name: am-code
+  short_description: Alight Motion XML coding skill for AI agents
+  default_prompt: Analyze the XML samples and create a safe, importable Alight Motion project for my requested motion graphic.
