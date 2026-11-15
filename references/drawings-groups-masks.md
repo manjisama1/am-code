@@ -9,7 +9,7 @@ Place timeline markers as direct `scene` children before layers:
 <bookmark t="1291" />
 ```
 
-`t` is an integer timeline position in the observed export. Keep bookmarks in scene-child order. The sample does not establish labels, colors, or marker animation.
+`t` is an integer timeline position in the observed export. Keep bookmarks in scene-child order. The sample does not establish labels, colors, or marker animation. See `timing-media-and-audio.md` for the timeline-unit hypothesis.
 
 ## Hand and vector drawing layers
 

@@ -16,6 +16,8 @@ Create importable Alight Motion projects from the documented schemas in this ski
 - For layer effects, read `references/effects-move-transform.md`; character/time effect IDs are cataloged in `references/text-layers.md`.
 - For hand drawing, vector drawing, groups, masks, and timeline markers, read `references/drawings-groups-masks.md`.
 - For native text layers, font references, alignment, wrapping, and text outlines, read `references/text-layers.md`.
+- For cameras, nulls, parenting, pivots, and nested composition timing, read `references/camera-and-groups.md`.
+- For scene timing, keyframe time values, audio, and media declarations, read `references/timing-media-and-audio.md`.
 - Use `xmls/` only as a private, temporary research inbox when the request needs an undocumented feature. Analyze it, distill the rule into a reference, then remove it. XML files are never required for normal skill use and never committed.
 - During research only, use `npm run compare -- before.xml after.xml` to isolate one controlled change, then add the distilled rule to its topic reference.
 
@@ -29,7 +31,7 @@ Create importable Alight Motion projects from the documented schemas in this ski
 
 ## Evidence boundary
 
-This skill documents basic scene metadata; native text layers; layer effects, including move/transform and character/time effect IDs; parametric and custom vector shapes; static color/gradient/no-fill/image-media modes; opacity, blend modes, path strokes, borders, shadows; drawings; groups; masks; bookmarks; and keyframed transforms. Effects use the same layer-level XML placement regardless of layer type. It does not yet document unlisted effects, animation of undocumented effect inputs, multi-effect stacking, parenting, audio, animated media behavior, holes/compound paths, blend compositing semantics in every context, or every graph/easing behavior. For those, use a one-change research export rather than inventing schema.
+This skill documents basic scene metadata; scene media and audio layers; native text layers, including default text-box pivots and alignment behavior; cameras, nulls, parent links, and nested groups; layer effects, including move/transform, character/time, color, wipe, texture, and 3D-extrude IDs; parametric and custom vector shapes; static color/gradient/no-fill/image-media modes; opacity, blend modes, path strokes, borders, shadows; drawings; masks; bookmarks; clockwise positive rotation in the tested coordinate system; and normalized layer-relative keyframe timestamps. Effects use the same layer-level XML placement regardless of layer type. It does not yet document unlisted effects, the visual semantics of blend/mask modes, camera coordinate axes, multi-effect render order, parenting math, audio automation, animated media behavior, holes/compound paths, or every graph/easing behavior. For those, use a one-change research export rather than inventing schema.
 
 ## Repository map
 

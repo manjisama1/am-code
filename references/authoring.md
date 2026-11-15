@@ -16,6 +16,7 @@ Use the documented schema in this repository for supported features. Preserve va
 - Effects are direct children of the layer they modify—not shape-only or text-only—and use a full namespaced `id`, `locallyApplied="true"`, and typed `property` values. Read `effects-move-transform.md` and the character/time catalog in `text-layers.md` rather than guessing IDs or input names.
 - Drawings and groups are `drawing` and `embedScene` layers rather than ordinary `shape` layers. Read `drawings-groups-masks.md` for their nested structures, mask ordering, and frame markers.
 - Native text uses a direct `text` layer with attributes for font, size, alignment, and wrapping. Read `text-layers.md` for the exact schema and portable-font constraints.
+- Cameras, null objects, parent links, audio, and media declarations use their own direct scene-child layer schemas. Read `camera-and-groups.md` and `timing-media-and-audio.md` before authoring them.
 
 ## Motion graphics workflow
 
@@ -27,4 +28,4 @@ Use the documented schema in this repository for supported features. Preserve va
 
 ## Unverified features
 
-Audio, effects beyond the documented border/shadow, move/transform, and text effects, animation of undocumented effect inputs, multi-effect stacks, groups/parenting, advanced text styling/animation, non-basic shape geometry, animated or portable media, and blend compositing semantics beyond the observed tokens need further exports. Media URIs in the current samples use Android `content://` references and are device-specific; never promise that copying one will package the image for another device. Isolate one feature per probe before adding an authoring rule.
+Effects beyond the documented catalogs, animation of undocumented effect inputs, multi-effect render order, parenting math, advanced text styling/animation, non-basic shape geometry, audio automation, animated or portable media, and blend compositing semantics beyond serialized tokens need further exports. Media URIs in the observed schema are device-specific; never promise that copying one will package an image or audio file for another device. Isolate one feature per probe before adding an authoring rule.

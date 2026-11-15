@@ -29,6 +29,22 @@ Keep the IDs, property names, types, and numeric precision exact. This skill doc
 
 `movealongpath3` is intentionally under `com.alightcreative.effect` (singular), unlike the other observed IDs. Do not normalize it to `effects`.
 
+## Additional verified effect schemas
+
+These IDs and property names are also serialized in the researched projects. Keyed properties use the standard `<kf>` child form.
+
+| Effect ID | Confirmed properties |
+|---|---|
+| `com.alightcreative.effects.brightcont2` | `brightness: float`, `contrast: float` |
+| `com.alightcreative.gradientmap` | `color1: color`, `color2: color` |
+| `com.alightcreative.effects.wipe2` | `start: float` (keyed), `end: float`, `angle: float`, `feather: float` |
+| `com.alightcreative.effects.lumakey3` | `lowThreshold: float`, `highThreshold: float`, `feather: float`, `invert: bool`, `weighted: bool` |
+| `com.alightcreative.effects.ridges2` | `evolution: float` (keyed), `scale: float`, `stretch: vec2`, `intensity: float`, `seed: float`, `color1: color`, `color2: color`, `octaves: float` |
+| `com.alightcreative.effects.lift` | `fill: float` |
+| `com.alightcreative.effects.extrude` | `orient: quat` (keyed), `widthRatio: float`, `heightRatio: float`, `depth: float`, `strength: float`, `position: vec3`, `scale: float`, `interiorColor: color`, `interiorBlend: float`, `fadeColor: color`, `fadeBlend: float`, `shadingType: int`, `lightIntensity: float`, `shine: float`, `spec: float`, `ambient: float`, `lightColor: color`, `lightDir: vec2`, `lightDepth: float`, `MAX_ITER: float` |
+
+These files establish serialization and property types, not the visual behavior, value units, or safe ranges of the effects. No blur, RGB split/chromatic aberration, glitch, CRT, invert, bloom/glow, vignette, grain/noise, mirror, wave, mosaic, or dedicated 3D-transform effect ID appears in the current probes.
+
 ## Safe authoring workflow
 
 1. Create the whole `<effect>` block from the selected table entry.
