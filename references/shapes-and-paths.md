@@ -1,10 +1,8 @@
 # Shapes and custom paths
 
-Use a built-in shape when its parameters express the design cleanly. Use a custom `<path>` for silhouettes such as hearts, leaves, people, logos, and spirals. Start custom artwork from a local exported path baseline whenever possible.
+Use a built-in shape when its parameters express the design cleanly. Use a custom `<path>` for silhouettes such as hearts, leaves, people, logos, and spirals.
 
 ## Custom vector path
-
-Evidence: local `shape2.xml`.
 
 ```xml
 <shape id="UNIQUE_ID" label="Custom shape" startTime="0" endTime="2015"
@@ -22,11 +20,11 @@ The observed `d` grammar uses SVG path commands:
 - `C x1 y1, x2 y2, x y` — cubic Bézier curve to an endpoint, with two control points.
 - `Z` — close the current contour.
 
-Path coordinates are local to the shape's transform location; samples use both positive and negative coordinates around the local origin. Keep numeric precision emitted by the source or generator. A closed path is appropriate for a filled silhouette. The samples do **not** establish holes, multiple independent contours, quadratic commands, arcs, relative commands, or path-keyframe animation—obtain a probe before relying on them.
+Path coordinates are local to the shape's transform location. Keep generated numeric precision consistent. A closed path is appropriate for a filled silhouette. This skill does **not** document holes, multiple independent contours, quadratic commands, arcs, relative commands, or path-keyframe animation—research them before relying on them.
 
 ## Built-in parametric shapes
 
-Evidence: local `shape1.xml`. Each follows the ordinary shape attributes, an `s` type code, a `transform`, `fillColor`, and the listed `property` children.
+Each built-in shape follows the ordinary shape attributes, an `s` type code, a `transform`, `fillColor`, and the listed `property` children.
 
 | Shape code | Confirmed properties | Typical use |
 |---|---|---|
@@ -50,7 +48,7 @@ Evidence: local `shape1.xml`. Each follows the ordinary shape attributes, an `s`
 | `.stamp` | `size: vec2`, `cornerRadius: float`, `perforationSize: float`, `perforationSpacing: float` | Stamp edge |
 | `.teardrop` | `radius: float`, `tail: float`, `squeeze: float`, `tailWidth: float` | Drop/leaf base |
 
-Use float values with six decimals and `vec2` values as `x,y`. The `.penta` sample omitted `p3`, indicating editable-point properties may be omitted; do not infer how a missing point is rendered without a one-change probe.
+Use float values with six decimals and `vec2` values as `x,y`. The `.penta` schema documents `p1`, `p2`, `p4`, and `p5`; research the behavior of omitted or additional points before using them.
 
 ## Stroke geometry
 

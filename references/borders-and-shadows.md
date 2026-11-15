@@ -1,8 +1,6 @@
 # Borders, strokes, and shadows
 
-Evidence: local `border and shadow.xml`.
-
-These are direct child elements of a `shape`, alongside `fillColor` and `property`. Preserve the emitted child order from the nearest baseline.
+These are direct child elements of a `shape`, alongside `fillColor` and `property`. Preserve the documented child order.
 
 ## Path stroke
 
@@ -29,7 +27,7 @@ Observed attributes and values:
 - `join="round"` or `join="miter"`
 - `enabled="false"` to retain a disabled stroke configuration
 
-`color` is observed in earlier line/arc samples but omitted in some outlined-rectangle samples; do not add a color when copying a baseline that omits it. The samples do not establish other cap/join/direction values or dash behavior.
+`color` is supported for line/arc strokes and may be absent for outlined shapes. The skill does not document other cap/join/direction values or dash behavior.
 
 ## Border
 

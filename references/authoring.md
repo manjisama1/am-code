@@ -1,6 +1,6 @@
 # Authoring importable projects
 
-Use the closest compatible sample in `xmls/` as the baseline. Do not build a scene from an imagined schema when a real export is available.
+Use the documented schema in this repository for supported features. Preserve values and element order where a reference calls for it. Use a private research export only when the requested feature is not documented.
 
 ## Confirmed patterns
 
@@ -13,7 +13,9 @@ Use the closest compatible sample in `xmls/` as the baseline. Do not build a sce
 - Confirmed fills are `color`, `gradient`, `none`, and `media`. A radial or sweep gradient is represented by a `gradient` child with `type`, `startColor`, `endColor`, `start`, and `end` attributes. `fillType="media"` references a scene-level `media` element through `fillImage`.
 - Layer opacity is a child of `transform`; blend mode is the optional `blending` attribute on `shape`. Read `blending-and-opacity.md` for confirmed values and keyframe rules.
 - Outlines may use `path-stroke` or `border`; a shadow is a sibling child of the shape. Read `borders-and-shadows.md` for observed directions, nesting, and animation patterns.
-- Effects are direct `shape` children and use a full namespaced `id`, `locallyApplied="true"`, and typed `property` values. Read `effects-move-transform.md` rather than guessing effect IDs or input names.
+- Effects are direct children of the layer they modify—not shape-only or text-only—and use a full namespaced `id`, `locallyApplied="true"`, and typed `property` values. Read `effects-move-transform.md` and the character/time catalog in `text-layers.md` rather than guessing IDs or input names.
+- Drawings and groups are `drawing` and `embedScene` layers rather than ordinary `shape` layers. Read `drawings-groups-masks.md` for their nested structures, mask ordering, and frame markers.
+- Native text uses a direct `text` layer with attributes for font, size, alignment, and wrapping. Read `text-layers.md` for the exact schema and portable-font constraints.
 
 ## Motion graphics workflow
 
@@ -25,4 +27,4 @@ Use the closest compatible sample in `xmls/` as the baseline. Do not build a sce
 
 ## Unverified features
 
-Text, audio, effects beyond the documented border/shadow and move/transform effects, animated effect inputs, multi-effect stacks, groups/parenting, non-basic shape geometry, animated or portable media, and blend compositing semantics beyond the observed tokens need further exports. Media URIs in the current samples use Android `content://` references and are device-specific; never promise that copying one will package the image for another device. Isolate one feature per probe before adding an authoring rule.
+Audio, effects beyond the documented border/shadow, move/transform, and text effects, animation of undocumented effect inputs, multi-effect stacks, groups/parenting, advanced text styling/animation, non-basic shape geometry, animated or portable media, and blend compositing semantics beyond the observed tokens need further exports. Media URIs in the current samples use Android `content://` references and are device-specific; never promise that copying one will package the image for another device. Isolate one feature per probe before adding an authoring rule.

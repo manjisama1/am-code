@@ -1,8 +1,6 @@
-# Move and transform effects
+# Layer effects: move and transform
 
-Evidence: local `move a .xml`.
-
-Each observed effect is a direct child of `shape`, following `fillColor`, and has a complete namespaced `id` plus `locallyApplied="true"`:
+Each effect is a direct child of the layer it modifies and has a complete namespaced `id` plus `locallyApplied="true"`. Its XML placement is layer-agnostic: use the same block on any editable layer type rather than treating it as shape-only:
 
 ```xml
 <effect id="com.alightcreative.effects.spin" locallyApplied="true">
@@ -10,7 +8,7 @@ Each observed effect is a direct child of `shape`, following `fillColor`, and ha
 </effect>
 ```
 
-Keep the IDs, property names, types, and numeric precision exact. The sample proves one effect per layer with static property values; it does not establish multiple effects on a layer, property keyframes, effect ordering, or the exact visual result of every parameter.
+Keep the IDs, property names, types, and numeric precision exact. This skill documents one effect per layer with static property values; multi-effect stacks, property keyframes, effect ordering, and the exact visual result of every parameter remain research topics.
 
 ## Observed effect schemas
 
@@ -33,7 +31,7 @@ Keep the IDs, property names, types, and numeric precision exact. The sample pro
 
 ## Safe authoring workflow
 
-1. Copy the whole `<effect>` block for the selected effect from a compatible local export.
+1. Create the whole `<effect>` block from the selected table entry.
 2. Change only confirmed property values and retain every required property unless a one-change export proves it optional.
 3. Keep `locallyApplied="true"` and use `true`/`false` for boolean values, integer literals for `int`, and six-decimal values for floats.
 4. Import-test the project after editing; use a new dedicated export before adding keyframes to effect inputs or combining effects.

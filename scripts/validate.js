@@ -3,7 +3,10 @@ import { validateXml } from "../src/xml.js";
 
 const files = process.argv.slice(2);
 const targets = files.length ? files : listProjects();
-if (!targets.length) throw new Error("No .xml or .alp projects found in xmls/.");
+if (!targets.length) {
+  console.log("No research XMLs in xmls/; nothing to validate.");
+  process.exit(0);
+}
 
 let failures = 0;
 for (const target of targets) {
